@@ -46,7 +46,7 @@ We developed a semi-auto labelling tool that automatically labels images for a s
    Replace `YOUR_CONFIDENCE_THRESHOLD` with a decimal value between 0 and 1. This threshold will determine the minimum confidence required for a detection to be considered valid.
 8. An interactive window will open as shown below:
 
-   ![Example Image](https://github.com/scholar-2001/Semi_labelling/blob/master/Labellin_img.png?raw=true)
+   ![Example Image](https://github.com/scholar-2001/Semi_labelling/blob/fcbc42f958bc8344637730b862ab6d56d72dbb0c/Labellin_img.png?raw=true)
 
 9. Perform the labeling operations using the following keybindings:
 
