@@ -1,4 +1,3 @@
-import auto_classify
 import argparse
 import os
 import re
@@ -23,9 +22,12 @@ parser.add_argument('-o', '--output_dir', default='output', type=str, help='Path
 parser.add_argument('-t', '--thickness', default='3', type=int, help='Bounding box and cross line thickness')
 parser.add_argument('-s', '--image_size', default=640, type=int, help='Image size (single integer)')
 parser.add_argument('-c', '--conf_thres', default=0.35, type=float, help='Confidence threshold')
+parser.add_argument('-a', '--auto_annot', default='no', type=str, help='Choose whether to run auto annotator or not, Takes yes or no, default no')
 
 args = parser.parse_args()
-auto_classify.run_your_code(args.image_size,args.conf_thres)
+if(args.auto_annot == 'yes'):
+    import auto_classify
+    auto_classify.run_your_code(args.image_size,args.conf_thres)
 class_index = 0
 img_index = 0
 img = None

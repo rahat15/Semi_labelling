@@ -42,7 +42,11 @@ def run_your_code(im_size,conf_thres):
     imges_list,img_names = load_images(images_path)
     model_path = os.path.join(current_directory, 'model/model.pt')
     model = torch.hub.load('ultralytics/yolov5', 'custom', path=model_path)
-    batch_size = 10
+    if(torch.cuda.is_available()):
+        model.cuda()
+    else:
+        model.cpu()
+    batch_size = 20
     num_images = len(imges_list)
     start_idx = 0
     model.conf = conf_thres

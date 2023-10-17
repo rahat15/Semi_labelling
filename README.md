@@ -32,18 +32,20 @@ We developed a semi-auto labelling tool that automatically labels images for a s
 7. Run the following command in the terminal:
 
    ```bash
-   python run.py -s IMAGE_SIZE -c CONFIDENCE_THRESHOLD
-   ```
-   You can specify the desired image size using the -s or --image_size argument followed by the size.
-   *Note:* It takes only a single integer value as image size.
-
-   Additionally, you can adjust the NMS confidence threshold using the -c or --conf_thres argument. For example, to set a specific confidence threshold for NMS, use:
-
-   ```bash
-   python run.py -s IMAGE_SIZE -c YOUR_CONFIDENCE_THRESHOLD
+   python run.py
    ```
 
-   Replace `YOUR_CONFIDENCE_THRESHOLD` with a decimal value between 0 and 1. This threshold will determine the minimum confidence required for a detection to be considered valid.
+   Optional Arguments:
+   - `-s`, `--image_size`: Set the image size (single integer, default is 640).
+   - `-c`, `--conf_thres`: Set the confidence threshold (default is 0.35).
+   - `-a`, `--auto_annot`: Choose whether to run the auto annotator or not (Takes 'yes' or 'no', default is 'no').
+
+   Example with optional arguments:
+   ```
+   python run.py -s 800 -c 0.4 -a yes
+   ```
+
+
 8. An interactive window will open as shown below:
 
    ![Example Image](https://github.com/scholar-2001/Semi_labelling/blob/fcbc42f958bc8344637730b862ab6d56d72dbb0c/Labellin_img.png?raw=true)
